@@ -1,0 +1,15 @@
+{
+  "name": "Nitin Dubey Portfolio",
+  "short_name": "Portfolio",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#10131a",
+  "theme_color": "#10131a",
+  "icons": [
+    {
+      "src": "/images/profile-photo.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+} 
