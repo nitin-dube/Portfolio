@@ -84,7 +84,7 @@ export default function Portfolio() {
           <div className="flex-1 flex flex-col items-center justify-center w-full relative z-20">
             {/* Profile Photo */}
             <div className="backdrop-blur-xl bg-white/10 border border-blue-900/30 rounded-2xl px-10 py-12 shadow-2xl animate-slide-fade-up-slow max-w-2xl mx-auto flex flex-col items-center">
-              <h1 className="text-5xl md:text-7xl font-black text-white mb-2 tracking-tight drop-shadow-lg animate-slide-fade-up-slow text-center" style={{fontFamily:'Inter, sans-serif'}}>Building Digital Experiences</h1>
+              <h1 className="text-5xl md:text-7xl font-black text-white mb-2 tracking-tight" style={{fontFamily:'Inter, sans-serif'}} aria-label="Nitin Kumar Dubey">Nitin Kumar Dubey</h1>
               {/* Animated accent line */}
               <div className="w-24 h-1 bg-gradient-to-r from-blue-400 via-green-400 to-purple-400 rounded-full mb-4 animate-accent-line"></div>
               <h2 className="text-xl md:text-3xl font-light text-blue-200 animate-slide-fade-up-slow delay-200 text-center" style={{fontFamily:'Inter, sans-serif'}}>Full-Stack Developer & Tech Innovator</h2>
@@ -106,8 +106,9 @@ export default function Portfolio() {
               <span className="text-sm text-gray-400 font-mono">Full-Stack Developer</span>
             </div>
             <div className="flex items-center gap-4">
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition"><Github size={22} /></a>
-              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-white transition"><Linkedin size={22} /></a>
+              <a href="https://github.com/nitin-dube" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-gray-400 hover:text-white transition"><Github size={22} /></a>
+              <a href="https://www.linkedin.com/in/nitin-kumar-dubey-0052nkd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-blue-400 hover:text-white transition"><Linkedin size={22} /></a>
+              <a href="https://instagram.com/nitinkrdubey" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-pink-400 hover:text-white transition"><svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
             </div>
           </header>
           {/* Hamburger Button */}
@@ -174,39 +175,31 @@ export default function Portfolio() {
               </div>
             </div>
             {/* Sidebar Navigation */}
-            <nav className="px-2 py-4 border-t-2 border-blue-800">
+            <nav className="px-2 py-4 border-t-2 border-blue-800" aria-label="Sidebar navigation">
               <ul className="space-y-2 text-base font-mono">
                 <li>
-                  <a href="#about" className={`flex items-center gap-3 px-3 py-2 rounded-lg transition font-semibold relative focus:outline-none focus:ring-2 focus:ring-blue-500
-                    ${activeSection==='about' ? 'bg-blue-900 text-blue-300 border-l-4 border-blue-400 shadow-lg' : 'text-blue-400 hover:bg-gray-800 hover:border-l-4 hover:border-blue-600'}`}
-                    onClick={() => setSidebarOpen(false)} aria-label="About section">
+                  <a href="#about" tabIndex={0} className={`flex items-center gap-3 px-3 py-2 rounded-lg transition font-semibold relative focus:outline-none focus:ring-2 focus:ring-blue-500 ${activeSection==='about' ? 'bg-blue-900 text-blue-300 border-l-4 border-blue-400 shadow-lg' : 'text-blue-400 hover:bg-gray-800 hover:border-l-4 hover:border-blue-600'}`} onClick={() => setSidebarOpen(false)} aria-label="About section">
                     <UserCircle size={22}/>
                     <span>About</span>
                     {activeSection==='about' && <span className="absolute left-0 top-0 h-full w-1 bg-blue-400 rounded-r"></span>}
                   </a>
                 </li>
                 <li>
-                  <a href="#skills" className={`flex items-center gap-3 px-3 py-2 rounded-lg transition font-semibold relative focus:outline-none focus:ring-2 focus:ring-green-500
-                    ${activeSection==='skills' ? 'bg-green-900 text-green-300 border-l-4 border-green-400 shadow-lg' : 'text-green-400 hover:bg-gray-800 hover:border-l-4 hover:border-green-600'}`}
-                    onClick={() => setSidebarOpen(false)} aria-label="Skills section">
+                  <a href="#skills" tabIndex={0} className={`flex items-center gap-3 px-3 py-2 rounded-lg transition font-semibold relative focus:outline-none focus:ring-2 focus:ring-green-500 ${activeSection==='skills' ? 'bg-green-900 text-green-300 border-l-4 border-green-400 shadow-lg' : 'text-green-400 hover:bg-gray-800 hover:border-l-4 hover:border-green-600'}`} onClick={() => setSidebarOpen(false)} aria-label="Skills section">
                     <Grid size={22}/>
                     <span>Skills</span>
                     {activeSection==='skills' && <span className="absolute left-0 top-0 h-full w-1 bg-green-400 rounded-r"></span>}
                   </a>
                 </li>
                 <li>
-                  <a href="#projects" className={`flex items-center gap-3 px-3 py-2 rounded-lg transition font-semibold relative focus:outline-none focus:ring-2 focus:ring-purple-500
-                    ${activeSection==='projects' ? 'bg-purple-900 text-purple-300 border-l-4 border-purple-400 shadow-lg' : 'text-purple-400 hover:bg-gray-800 hover:border-l-4 hover:border-purple-600'}`}
-                    onClick={() => setSidebarOpen(false)} aria-label="Projects section">
+                  <a href="#projects" tabIndex={0} className={`flex items-center gap-3 px-3 py-2 rounded-lg transition font-semibold relative focus:outline-none focus:ring-2 focus:ring-purple-500 ${activeSection==='projects' ? 'bg-purple-900 text-purple-300 border-l-4 border-purple-400 shadow-lg' : 'text-purple-400 hover:bg-gray-800 hover:border-l-4 hover:border-purple-600'}`} onClick={() => setSidebarOpen(false)} aria-label="Projects section">
                     <Briefcase size={22}/>
                     <span>Projects</span>
                     {activeSection==='projects' && <span className="absolute left-0 top-0 h-full w-1 bg-purple-400 rounded-r"></span>}
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" className={`flex items-center gap-3 px-3 py-2 rounded-lg transition font-semibold relative focus:outline-none focus:ring-2 focus:ring-cyan-500
-                    ${activeSection==='contact' ? 'bg-cyan-900 text-cyan-300 border-l-4 border-cyan-400 shadow-lg' : 'text-cyan-400 hover:bg-gray-800 hover:border-l-4 hover:border-cyan-600'}`}
-                    onClick={() => setSidebarOpen(false)} aria-label="Contact section">
+                  <a href="#contact" tabIndex={0} className={`flex items-center gap-3 px-3 py-2 rounded-lg transition font-semibold relative focus:outline-none focus:ring-2 focus:ring-cyan-500 ${activeSection==='contact' ? 'bg-cyan-900 text-cyan-300 border-l-4 border-cyan-400 shadow-lg' : 'text-cyan-400 hover:bg-gray-800 hover:border-l-4 hover:border-cyan-600'}`} onClick={() => setSidebarOpen(false)} aria-label="Contact section">
                     <MessageSquare size={22}/>
                     <span>Contact</span>
                     {activeSection==='contact' && <span className="absolute left-0 top-0 h-full w-1 bg-cyan-400 rounded-r"></span>}
@@ -219,21 +212,22 @@ export default function Portfolio() {
           <main className="flex-1 ml-0 md:ml-52 relative z-10 pt-16">
             {/* Hero Section */}
             <section className="w-full flex flex-col items-center justify-center py-20 px-4 text-center" id="about">
-              <h1 className="text-5xl md:text-7xl font-black text-white mb-2 tracking-tight">Nitin Kumar Dubey</h1>
-              <h2 className="text-xl md:text-2xl font-mono text-blue-400 mb-2">B.Tech CSE, Sarala Birla University (2026)</h2>
-              <h3 className="text-lg md:text-xl text-green-400 font-mono mb-4">Founder, Aakashdeep Foundation (NGO)</h3>
+              <h1 className="text-5xl md:text-7xl font-black text-white mb-2 tracking-tight" style={{fontFamily:'Inter, sans-serif'}} aria-label="Nitin Kumar Dubey">Nitin Kumar Dubey</h1>
+              <h2 className="text-xl md:text-2xl font-mono text-blue-400 mb-2" aria-label="B.Tech CSE, Sarala Birla University (2026)">B.Tech CSE, Sarala Birla University (2026)</h2>
+              <h3 className="text-lg md:text-xl text-green-400 font-mono mb-4" aria-label="Founder, Aakashdeep Foundation (NGO)">Founder, Aakashdeep Foundation (NGO)</h3>
               <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-6">Aspiring Data Scientist & Full-Stack Developer. Founded an NGO impacting 100+ students. Delivered real-world solutions in internships and projects. Strong communicator, proactive, and always learning.</p>
               <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-2">
                 <a
                   href="mailto:nitinkrdubey.nkd@gmail.com"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow transition text-lg"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 focus:bg-blue-800 text-white font-bold rounded-lg shadow transition text-lg focus:outline-none focus:ring-2 focus:ring-blue-400 aria-label='Get in touch'"
+                  aria-label="Get in touch"
                 >
                   <ArrowRight size={20}/> Get in touch
                 </a>
                 <a
                   href="/resume.pdf"
                   download
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-blue-700 text-white font-bold rounded-lg shadow transition text-lg transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 relative group"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-blue-700 focus:bg-blue-800 text-white font-bold rounded-lg shadow transition text-lg transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 relative group"
                   aria-label="Download my resume (PDF)"
                 >
                   <FileText size={20} />
@@ -253,9 +247,8 @@ export default function Portfolio() {
               <section id="skills" className="bg-gray-900/80 rounded-2xl border border-green-500/20 shadow-lg p-8 flex flex-col justify-between transition hover:shadow-green-500/30 hover:scale-[1.025] duration-200">
                 <div className="flex items-center gap-3 mb-4"><Grid size={28} className="text-green-300"/><h2 className="text-3xl font-bold text-green-300 font-mono">Key Skills</h2></div>
                 <ul className="grid grid-cols-2 gap-2 text-gray-200 text-lg font-mono mb-4">
-                  <li><b>Data Analytics & Visualization</b></li>
                   <li><b>API Integration & Backend</b></li>
-                  <li><b>React.js, Node.js</b></li>
+                  <li><b>React.js</b></li>
                   <li><b>Python, C, C++</b></li>
                   <li><b>HTML, CSS, JavaScript</b></li>
                   <li><b>WordPress, MySQL</b></li>
@@ -279,10 +272,12 @@ export default function Portfolio() {
               <section id="experience" className="bg-gray-900/80 rounded-2xl border border-purple-500/20 shadow-lg p-8 flex flex-col justify-between transition hover:shadow-purple-500/30 hover:scale-[1.025] duration-200 md:col-span-2">
                 <div className="flex items-center gap-3 mb-4"><Briefcase size={28} className="text-purple-300"/><h2 className="text-3xl font-bold text-purple-300 font-mono">Professional Experience</h2></div>
                 <ul className="text-gray-200 text-lg font-mono mb-4 space-y-2">
-                  <li><b>Founder</b>, Aakashdeep Foundation (NGO) <span className="text-sm text-gray-400">2023–Present</span>
+                  <li><b>Founder</b>, Aakashdeep Foundation (NGO) <span className="text-sm text-gray-400">July 2025–Present</span>
                     <ul className="list-disc ml-6 text-base text-gray-400">
-                      <li>Launched and led an NGO impacting 100+ underprivileged students.</li>
-                      <li>Organized workshops and social drives, managed a team of 10+ volunteers.</li>
+                      <li>Founded and lead a non-profit uplifting rural communities in India through education, health, and environmental initiatives.</li>
+                      <li>Organized impactful events and donation drives, benefiting children and local communities.</li>
+                      <li>Managed a team of 10+ volunteers and launched pilot projects in key social sectors.</li>
+                      <li>Established the foundation’s digital presence to expand outreach and engagement.</li>
                     </ul>
                   </li>
                   <li><b>Web Development Intern</b>, Dilwado.com <span className="text-sm text-gray-400">Jun 2025–Present</span>
@@ -315,31 +310,124 @@ export default function Portfolio() {
               {/* Featured Project Card */}
               <section id="featured-project" className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl border-2 border-cyan-500/40 shadow-xl p-8 flex flex-col justify-between transition hover:shadow-cyan-500/40 hover:scale-[1.03] duration-200 md:col-span-2">
                 <div className="flex items-center gap-3 mb-4"><Star size={28} className="text-cyan-300"/><h2 className="text-3xl font-bold text-cyan-300 font-mono">Featured Project</h2></div>
-                <h3 className="text-2xl font-bold text-white mb-2">Oceanic Dataset Linear Regression</h3>
-                <ul className="list-disc ml-6 text-lg text-gray-300 mb-2">
-                  <li>Built and trained ML models to predict oceanic data trends.</li>
-                  <li>Automated data cleaning and reporting, reducing manual effort by 60%.</li>
-                  <li>Presented findings to academic mentors, received positive feedback.</li>
-                </ul>
-                <span className="inline-block bg-cyan-900 text-cyan-300 px-3 py-1 rounded-full text-sm font-mono mt-2">Python • Machine Learning</span>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  <a href="https://your-featured-project-link.com" target="_blank" rel="noopener noreferrer" className="hover:underline focus:underline text-cyan-200 transition" aria-label="Student Attendance Management System (SAMS)">Student Attendance Management System (SAMS)</a>
+                </h3>
+                <div className="text-sm text-cyan-200 font-mono mb-1">NIAMT Internship Project</div>
+                <div className="text-sm text-gray-300 font-mono mb-2">React.js • Flask • Firebase • REST API</div>
+                <div className="text-gray-300 text-base mb-3">
+                  SAMS is a full-stack web app for digital attendance management in academic institutions. It enables secure, role-based logins for admins, faculty, and students, and streamlines attendance marking, tracking, and reporting through a modern dashboard.
+                </div>
+                <div className="mb-2">
+                  <span className="font-bold text-cyan-300">Key Features:</span>
+                  <ul className="list-disc ml-8 text-base text-gray-200 mt-1">
+                    <li>Role-based login (Admin, Faculty, Student)</li>
+                    <li>Real-time attendance marking and analytics</li>
+                    <li>Automated notifications for low attendance</li>
+                    <li>Visual reports and downloadable summaries</li>
+                    <li>Firebase authentication & data storage</li>
+                  </ul>
+                </div>
+                <div className="mb-2">
+                  <span className="font-bold text-cyan-300">My Contribution:</span>
+                  <div className="text-gray-300 text-base mb-1">Project Lead & Full Stack Developer — Led the team, designed system architecture, and ensured seamless integration between frontend (React) and backend (Flask, Firebase). Oversaw Git version control, explained technical flows, and coordinated collaborative development.</div>
+                  <ul className="list-disc ml-8 text-base text-gray-200 mt-1">
+                    <li>Led project as Team Leader, managing both technical and team collaboration</li>
+                    <li>Designed system flow and architecture</li>
+                    <li>Integrated frontend with backend API endpoints (REST, Firebase)</li>
+                    <li>Oversaw Git version control and team contributions</li>
+                    <li>Facilitated collaborative development and deployment</li>
+                  </ul>
+                </div>
+                <div>
+                  <span className="font-bold text-cyan-300">Impact:</span>
+                  <ul className="list-disc ml-8 text-base text-gray-200 mt-1">
+                    <li>Reduced manual work and improved accuracy</li>
+                    <li>Enhanced transparency and accessibility</li>
+                  </ul>
+                </div>
+              </section>
+              {/* Featured Project Card for Aakashdeep Foundation */}
+              <section id="featured-project-ngo" className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl border-2 border-yellow-400/40 shadow-xl p-8 flex flex-col justify-between transition hover:shadow-yellow-400/40 hover:scale-[1.03] duration-200 md:col-span-2 mt-8">
+                <div className="flex items-center gap-3 mb-4"><Star size={28} className="text-yellow-300"/><h2 className="text-3xl font-bold text-yellow-300 font-mono">Featured Project</h2></div>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  <a href="https://your-featured-project-link.com" target="_blank" rel="noopener noreferrer" className="hover:underline focus:underline text-yellow-200 transition" aria-label="Aakashdeep Foundation – NGO Website">Aakashdeep Foundation – NGO Website</a>
+                </h3>
+                <div className="text-sm text-yellow-200 font-mono mb-1">Social Impact Project</div>
+                <div className="text-sm text-gray-300 font-mono mb-2">HTML5 • CSS3 • Netlify • Responsive Web Design</div>
+                <div className="text-gray-300 text-base mb-3">
+                  Designed and developed a fully responsive, bilingual website for Aakashdeep Foundation, a non-profit dedicated to uplifting rural communities in India through education, health, and environmental initiatives. Managed the project end-to-end, from content structuring and multilingual support to visual design and deployment.
+                </div>
+                <div className="mb-2">
+                  <span className="font-bold text-yellow-300">Key Features:</span>
+                  <ul className="list-disc ml-8 text-base text-gray-200 mt-1">
+                    <li>Programs section for education, health, and environment campaigns</li>
+                    <li>Bilingual support (Hindi & English)</li>
+                    <li>Impact timeline, growth stats, and community reach</li>
+                    <li>Events gallery and real testimonials</li>
+                    <li>Contact form and donor guidance</li>
+                    <li>Fully responsive design for all devices</li>
+                  </ul>
+                </div>
+                <div>
+                  <span className="font-bold text-yellow-300">Impact:</span>
+                  <ul className="list-disc ml-8 text-base text-gray-200 mt-1">
+                    <li>Established the foundation’s first digital presence</li>
+                    <li>Improved visibility and public trust</li>
+                    <li>Enabled seamless volunteer and donor interaction</li>
+                  </ul>
+                </div>
+              </section>
+              {/* Featured Project Card for Personal Portfolio Website */}
+              <section id="featured-project-portfolio" className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl border-2 border-blue-400/40 shadow-xl p-8 flex flex-col justify-between transition hover:shadow-blue-400/40 hover:scale-[1.03] duration-200 md:col-span-2 mt-8">
+                <div className="flex items-center gap-3 mb-4"><Star size={28} className="text-blue-300"/><h2 className="text-3xl font-bold text-blue-300 font-mono">Featured Project</h2></div>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  <a href="https://your-featured-project-link.com" target="_blank" rel="noopener noreferrer" className="hover:underline focus:underline text-blue-200 transition" aria-label="Personal Portfolio Website">Personal Portfolio Website</a>
+                </h3>
+                <div className="text-sm text-blue-200 font-mono mb-1">Showcase & Professional Branding</div>
+                <div className="text-sm text-gray-300 font-mono mb-2">React.js • Tailwind CSS • Vercel</div>
+                <div className="text-gray-300 text-base mb-3">
+                  Designed and developed a modern, interactive portfolio to present my projects, skills, and professional journey. The site features a visually engaging cover, sidebar navigation, and dynamic project cards, all optimized for a seamless user experience across devices.
+                </div>
+                <div className="mb-2">
+                  <span className="font-bold text-blue-300">Key Features:</span>
+                  <ul className="list-disc ml-8 text-base text-gray-200 mt-1">
+                    <li>Animated cover page and smooth transitions</li>
+                    <li>Sidebar navigation for easy section access</li>
+                    <li>Downloadable resume and contact options</li>
+                    <li>Interactive, filterable project showcase</li>
+                    <li>Fully responsive and mobile-friendly design</li>
+                  </ul>
+                </div>
+                <div>
+                  <span className="font-bold text-blue-300">Impact:</span>
+                  <ul className="list-disc ml-8 text-base text-gray-200 mt-1">
+                    <li>Enhanced my professional presence and personal branding</li>
+                    <li>Enabled recruiters and collaborators to easily explore my work</li>
+                    <li>Serves as a central hub for my digital portfolio and contact</li>
+                  </ul>
+                </div>
               </section>
               {/* Projects Card */}
-              <section id="projects" className="bg-gray-900/80 rounded-2xl border border-cyan-500/20 shadow-lg p-8 flex flex-col justify-between transition hover:shadow-cyan-500/30 hover:scale-[1.025] duration-200 md:col-span-2">
-                <div className="flex items-center gap-3 mb-4"><FileText size={28} className="text-cyan-300"/><h2 className="text-3xl font-bold text-cyan-300 font-mono">Other Projects</h2></div>
-                <ul className="text-gray-200 text-lg font-mono mb-4 space-y-2">
-                  <li><b>AI Healthcare Chatbot</b> <span className="text-sm text-gray-400">Python, NLTK, ML</span>
-                    <ul className="list-disc ml-6 text-base text-gray-400">
+              <section id="other-projects" className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl border-2 border-cyan-400/30 shadow-xl p-8 flex flex-col justify-between transition hover:shadow-cyan-400/40 hover:scale-[1.03] duration-200 md:col-span-2 mt-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <FileText size={28} className="text-cyan-300"/>
+                  <h2 className="text-3xl font-bold text-cyan-300 font-mono">Other Projects</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* AI Healthcare Chatbot Card */}
+                  <div className="bg-gray-900/80 rounded-xl border border-cyan-500/20 shadow-lg p-6 flex flex-col justify-between transition hover:shadow-cyan-500/30 hover:scale-[1.025] duration-200">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-cyan-400 font-bold">AI Healthcare Chatbot</span>
+                      <span className="text-xs text-gray-400 ml-2">Python, NLTK, ML</span>
+                    </div>
+                    <ul className="list-disc ml-5 text-base text-gray-300 mb-2">
                       <li>Developed a chatbot to answer health-related queries using ML and NLTK.</li>
                       <li>Improved user engagement by 30% through interactive responses.</li>
                     </ul>
-                  </li>
-                  <li><b>Academic Management Portal</b> <span className="text-sm text-gray-400">React, Node.js, API</span>
-                    <ul className="list-disc ml-6 text-base text-gray-400">
-                      <li>Collaborated on a real-time academic system at NIAMT.</li>
-                      <li>Integrated REST APIs for seamless data flow.</li>
-                    </ul>
-                  </li>
-                </ul>
+                  </div>
+                  {/* Add more project cards here as needed */}
+                </div>
               </section>
               {/* Certifications Card */}
               <section id="certifications" className="bg-gray-900/80 rounded-2xl border border-yellow-500/20 shadow-lg p-8 flex flex-col justify-between transition hover:shadow-yellow-500/30 hover:scale-[1.025] duration-200">
@@ -375,7 +463,7 @@ export default function Portfolio() {
               {/* Testimonial/Quote Card */}
               <section className="bg-gray-900/80 rounded-2xl border border-gray-700 shadow-lg p-8 flex flex-col justify-between transition hover:shadow-gray-500/30 hover:scale-[1.025] duration-200 md:col-span-2">
                 <div className="flex items-center gap-3 mb-4"><MessageSquare size={28} className="text-gray-300"/><h2 className="text-3xl font-bold text-gray-300 font-mono">Testimonial</h2></div>
-                <blockquote className="italic text-lg text-gray-400 max-w-2xl mx-auto">“Nitin is a proactive and reliable developer who consistently delivers high-quality work. His leadership at Aakashdeep Foundation and technical skills make him a valuable asset to any team.”<br/><span className="block mt-2 text-right text-gray-500">— Mentor, Sarala Birla University (placeholder)</span></blockquote>
+                <blockquote className="italic text-lg text-gray-400 max-w-2xl mx-auto">“Nitin Dubey is a passionate and committed full stack developer with a strong foundation in both frontend and backend technologies. His ability to learn quickly, build modern web apps, and deploy full-stack solutions sets him apart as a promising developer with a bright future.”<br/><span className="block mt-2 text-right text-gray-500">— Mentor, Full Stack Development Journey</span></blockquote>
               </section>
               {/* Contact Card */}
               <section id="contact" className="bg-gray-900/80 rounded-2xl border border-cyan-500/20 shadow-lg p-8 flex flex-col justify-between transition hover:shadow-cyan-500/30 hover:scale-[1.025] duration-200 md:col-span-2">
@@ -400,8 +488,9 @@ export default function Portfolio() {
             <footer className="w-full py-4 text-center text-xs text-gray-500 border-t border-gray-800 mt-12 flex flex-col items-center gap-2">
               <div>&copy; {new Date().getFullYear()} Nitin Dubey. All rights reserved.</div>
               <div className="flex gap-4 justify-center">
-                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition"><Github size={18}/></a>
-                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition"><Linkedin size={18}/></a>
+                <a href="https://github.com/nitin-dube" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-white transition"><Github size={18}/></a>
+                <a href="https://www.linkedin.com/in/nitin-kumar-dubey-0052nkd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-white transition"><Linkedin size={18}/></a>
+                <a href="https://instagram.com/nitinkrdubey" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-white transition"><svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
               </div>
             </footer>
           </main>
