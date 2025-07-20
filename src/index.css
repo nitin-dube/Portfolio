@@ -3,21 +3,240 @@
 @tailwind utilities;
 
 body, html {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  color: #f3f4f6;
-  background: #10131a;
-  letter-spacing: 0.01em;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.7;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #f1f5f9;
+  min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+h1, h2, h3 {
+  font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: #fff;
+}
+
+h1 {
+  font-size: 3.2rem;
+  margin-bottom: 0.7em;
+  line-height: 1.1;
+}
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5em;
+  line-height: 1.15;
+}
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.4em;
+  line-height: 1.2;
 }
 
 code, pre, .font-mono {
   font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
   font-size: 1em;
-  color: #a5b4fc;
+  color: #38bdf8;
+}
+
+.font-sans {
+  font-family: 'Inter', Arial, sans-serif;
+}
+.font-heading {
+  font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+}
+.font-mono {
+  font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+}
+
+/* Animated gradient text */
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+.animate-gradient-text {
+  animation: gradient-move 3s linear infinite alternate;
+  background-size: 200% 200%;
+}
+
+/* Typewriter effect */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+.animate-typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #bfdbfe;
+  animation: typewriter 2.5s steps(40, end) 1s 1 normal both;
+}
+
+/* Glowing dot separator */
+.glow-dot {
+  text-shadow: 0 0 8px #60a5fa, 0 0 16px #a78bfa, 0 0 24px #34d399;
+}
+
+/* Animated gradient for subtitle */
+@keyframes gradient-move-subtitle {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+.animate-gradient-subtitle {
+  animation: gradient-move-subtitle 3s linear infinite alternate;
+  background-size: 200% 200%;
+}
+
+/* Fade-in and slide-up animation */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(32px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(0.4,0.2,0.2,1) forwards;
+}
+
+/* Consistent card shadow and hover for all cards */
+.card-animate {
+  /* Revert to minimal, original style */
+  border-radius: 1rem;
+  background: #1e293b;
+  padding: 1.5rem 1.25rem;
+}
+.card-animate:hover {
+  background: #334155;
+}
+
+/* Consistent button style */
+.button-animate {
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+  border-radius: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  background: linear-gradient(90deg, #06b6d4 0%, #2563eb 100%);
+  box-shadow: 0 2px 8px 0 rgba(6,182,212,0.10);
+}
+.button-animate:hover {
+  box-shadow: 0 6px 24px 0 rgba(6,182,212,0.18);
+  transform: scale(1.06);
+  background: linear-gradient(90deg, #2563eb 0%, #06b6d4 100%);
+}
+
+/* Staggered animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+.stagger-7 { animation-delay: 0.7s; }
+.stagger-8 { animation-delay: 0.8s; }
+
+/* Animated gradient divider */
+.animated-divider {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #60a5fa, #34d399, #a78bfa, #f472b6, #60a5fa);
+  background-size: 200% 200%;
+  border-radius: 9999px;
+  margin: 2.5rem 0;
+  animation: gradient-move-divider 4s linear infinite alternate;
+}
+@keyframes gradient-move-divider {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Soft animated background accent */
+.animated-bg-accent {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 60% 40% at 70% 20%, rgba(56,189,248,0.10) 0%, rgba(16,23,42,0.95) 100%);
+  animation: bg-accent-move 18s linear infinite alternate;
+}
+@keyframes bg-accent-move {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* Social icon hover */
+.social-icon {
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+  background: #1e293b;
+  color: #38bdf8;
+}
+.social-icon:hover {
+  background: #06b6d4 !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px 0 rgba(6,182,212,0.15);
+}
+
+/* Improved focus state for buttons/links */
+.button-animate:focus, a:focus {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+/* Section spacing */
+section {
+  margin-bottom: 3.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+section:not(:last-child) {
+  border-bottom: 1.5px dashed #334155;
+}
+
+/* Remove extra margin from last section */
+section:last-child {
+  margin-bottom: 0;
+}
+
+/* Section divider: gradient line */
+section:not(:last-child)::after {
+  content: '';
+  display: block;
+  margin: 2.5rem auto 0 auto;
+  height: 4px;
+  width: 80%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #38bdf8, #06b6d4, #2563eb, #38bdf8);
+  opacity: 0.25;
+}
+
+/* One-time typewriter effect for cover page */
+.cover-typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #38bdf8;
+  font-family: 'Inter', Arial, sans-serif;
+  animation: cover-typewriter-anim 3.2s steps(38, end) 0.5s 1 normal both;
+}
+@keyframes cover-typewriter-anim {
+  from { width: 0; }
+  to { width: 100%; }
+}
+.cover-typewriter {
+  /* After animation, keep the bar at the end */
+  animation-fill-mode: forwards;
+}
+
+input, textarea {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1.1rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #1e293b;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 8px;
 }
